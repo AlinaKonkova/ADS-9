@@ -29,7 +29,7 @@ template<typename T>
       }
     int SearchNodeT(NodeT* root, T date) {
         if (root == nullptr) {
-          return 0;
+            return 0;
         } else if (root->value == date) {
             return root->counter;
         } else if (root->value > date) {
