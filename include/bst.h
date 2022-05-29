@@ -62,11 +62,11 @@ template<typename T>
      void Add_NodeT(T date) {
          root = AddNodeT(root, date);
      }
-     int DepthT() {
+     int depth() {
          return HeightTreeT(root) - 1;
      }
-     int SearchT(T date) {
-        return searchNode(root, date);
+     int search(T date) {
+        return SearchNodeT(root, date);
      }
   };
 #endif  // INCLUDE_BST_H_
