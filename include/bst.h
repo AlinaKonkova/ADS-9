@@ -23,13 +23,13 @@ template<typename T>
            root->right = nullptr;
            root->left = nullptr;
          } else {
-         if (date < root->value) root->left= AddNodeT(root->left, date);
-         else if (date > root->value) root->right = AddNodeT(root->right, date);
-         else
-           root->counter;
-         }
+           if (date < root->value) root->left = AddNodeT(root->left, date);
+           else if (date > root->value) root->right = AddNodeT(root->right, date);
+           else
+               root->count++;
+        }
          return root;
-     }
+    }
     int SearchNodeT(NodeT* root, T date) {
       if (root == nullptr) {
           return 0;
@@ -55,9 +55,9 @@ template<typename T>
             }
         }
     }
-   
-    public:
-     BST() {
+
+     public:
+      BST() {
          root = nullptr;
      }
      void Add_NodeT(T date) {
@@ -69,7 +69,5 @@ template<typename T>
      int SearchT(T date) {
         return searchNode(root, date);
      }
-
   };
-
 #endif  // INCLUDE_BST_H_
