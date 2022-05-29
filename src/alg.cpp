@@ -28,4 +28,4 @@ BST<std::string> makeTree(const char* filename) {
     FileO.close();
     return Tree;
 }
-}
+
