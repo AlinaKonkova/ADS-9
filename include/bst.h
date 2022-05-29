@@ -26,7 +26,7 @@ template<typename T>
            if (date < root->value) root->left = AddNodeT(root->left, date);
            else if (date > root->value) root->right = AddNodeT(root->right, date);
            else
-               root->count++;
+               root->counter++;
         }
          return root;
     }
@@ -56,7 +56,7 @@ template<typename T>
         }
     }
 
-     public:
+   public:
       BST() {
          root = nullptr;
      }
