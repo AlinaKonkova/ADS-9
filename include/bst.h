@@ -38,7 +38,7 @@ template<typename T>
       } else if (root->value > date) {
           return SearchNodeT(root->left, date);
       } else {
-          return SearchNodeT(root->rigth, date);
+          return SearchNodeT(root->right, date);
       }
     }
     int HeightTreeT(NodeT* root) {
