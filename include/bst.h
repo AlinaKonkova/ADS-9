@@ -6,8 +6,7 @@
 template<typename T>
   class BST{
    public:
-     struct NodeT
-     {
+     struct NodeT {
        int counter;
        T value;
        NodeT *left;
@@ -18,20 +17,19 @@ template<typename T>
      NodeT* root;
      NodeT* AddNodeT(NodeT* root, T date){
          if (root == nullptr) {
-           root=new Node;
+           root=new NodeT;
            root->counter = 1;
            root->value = date;
            root->right = nullptr;
            root->left = nullptr;
-         } else if (date < root->value) root->left= AddNodeT(root->left,value);
-         else if (date > root->value) root->right = AddNodeT(root->right,value);
+         } else if (date < root->value) root->left= AddNodeT(root->left, date);
+         else if (date > root->value) root->right = AddNodeT(root->right, date);
          else root->counter;
          return root;
       }
-    
     int SearchNodeT(NodeT* root, T date) {
         if (root == nullptr) {
-            return 0;
+          return 0;
         } else if (root->value == date) {
             return root->counter;
         } else if (root->value > date) {
@@ -43,7 +41,7 @@ template<typename T>
     
     int HeightTreeT(NodeT* root) {
         if (root == nullptr) {
-            return 0;
+          return 0;
         } else {
             int left = HeightTreeT(root->left);
             int right = HeightTreeT(root->right);
@@ -68,5 +66,6 @@ template<typename T>
          return searchNode(root, date);
      }
 
-};
+ };
+
 #endif  // INCLUDE_BST_H_
