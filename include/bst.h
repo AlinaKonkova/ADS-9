@@ -15,28 +15,31 @@ template<typename T>
     
    private:
      NodeT* root;
-     NodeT* AddNodeT(NodeT* root, T date){
+     NodeT* AddNodeT(NodeT* root, T date) {
          if (root == nullptr) {
-           root=new NodeT;
+           root = new NodeT;
            root->counter = 1;
            root->value = date;
            root->right = nullptr;
            root->left = nullptr;
-         } else if (date < root->value) root->left= AddNodeT(root->left, date);
+         } else { 
+         if (date < root->value) root->left= AddNodeT(root->left, date);
          else if (date > root->value) root->right = AddNodeT(root->right, date);
-         else root->counter;
+         else 
+           root->counter;
+         }
          return root;
       }
     int SearchNodeT(NodeT* root, T date) {
-        if (root == nullptr) {
-            return 0;
-        } else if (root->value == date) {
-            return root->counter;
-        } else if (root->value > date) {
-            return SearchNodeT(root->left, date);
-        } else {
-            return SearchNodeT(root->rigth, date);
-        }
+      if (root == nullptr) {
+          return 0;
+      } else if (root->value == date) {
+          return root->counter;
+      } else if (root->value > date) {
+          return SearchNodeT(root->left, date);
+      } else {
+          return SearchNodeT(root->rigth, date);
+      }
     }
     
     int HeightTreeT(NodeT* root) {
@@ -52,7 +55,7 @@ template<typename T>
             }
         }
     }
-  public:
+   public:
      BST() {
          root = nullptr;
      }
@@ -63,9 +66,9 @@ template<typename T>
          return HeightTreeT(root) - 1;
      }
      int SearchT(T date) {
-         return searchNode(root, date);
+        return searchNode(root, date);
      }
 
- };
+  };
 
 #endif  // INCLUDE_BST_H_
